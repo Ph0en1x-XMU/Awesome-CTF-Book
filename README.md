@@ -1,3 +1,15 @@
-# My Awesome Book
+# Awesome CTF Book
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+关于CTF的小书。
+
+
+
+# Thanks Contributor {#thanks-contributor}
+
+* lzytony
+  [https://lxpark.com/](https://lxpark.com/)
+* chybeta 
+  [https://chybeta.github.io/](https://chybeta.github.io/)
+
+
+
