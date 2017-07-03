@@ -1,4 +1,4 @@
-# An Awesome CTF Book
+# Awesome CTF Book
 
 ## 这是什么
 
