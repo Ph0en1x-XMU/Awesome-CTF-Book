@@ -6,9 +6,13 @@
 
 ## PWN
 
-## MISC
+## Misc
 
 ## Crypto
 
-## Write up
+## Reverse
+
+## Mobile
+
+## Writeups
 
