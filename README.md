@@ -4,7 +4,7 @@
 
 Something about CTF.
 
-# Contributors {#thanks-contributor}
+## Contributors
 
 * chybeta  
   [https://chybeta.github.io/](https://chybeta.github.io/)
