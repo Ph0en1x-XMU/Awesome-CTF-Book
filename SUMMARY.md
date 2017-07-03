@@ -5,9 +5,5 @@
 
 ## Web
 
-* [XSS](web/xss.md)
-
 ## PWN
-
-* [膜拜大佬](mo-bai-da-lao.md)
 
