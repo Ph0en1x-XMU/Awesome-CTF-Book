@@ -16,12 +16,13 @@
 ## 目标与期望
 
 希望能通过这本书，以及配套的资源，能使读者真正有所收获，吸引更多的人加入到我们当中来。愿一同进步！
+
 ## 贡献者
 
 * chybeta
   [https://chybeta.github.io/](https://chybeta.github.io/)
-* lzhtony 
+* lzhtony 
   [https://lxpark.com/](https://lxpark.com/)
 
-
+如有任何错误，请不吝指正。同时也希望能有更多的人加入到我们中间来！
 
