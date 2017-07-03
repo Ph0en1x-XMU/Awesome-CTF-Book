@@ -1,13 +1,16 @@
-# Awesome CTF Book
+# An Awesome CTF Book
 
 关于CTF的小书。
 
-# Thanks Contributor {#thanks-contributor}
+Something about CTF.
+
+# Contributors {#thanks-contributor}
+
+* chybeta  
+  [https://chybeta.github.io/](https://chybeta.github.io/)
 
 * lzhtony
   [https://lxpark.com/](https://lxpark.com/)
-* chybeta 
-  [https://chybeta.github.io/](https://chybeta.github.io/)
 
 
 
