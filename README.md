@@ -2,8 +2,6 @@
 
 关于CTF的小书。
 
-
-
 # Thanks Contributor {#thanks-contributor}
 
 * lzytony
