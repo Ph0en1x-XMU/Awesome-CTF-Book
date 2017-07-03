@@ -4,7 +4,7 @@
 
 # Thanks Contributor {#thanks-contributor}
 
-* lzytony
+* lzhtony
   [https://lxpark.com/](https://lxpark.com/)
 * chybeta 
   [https://chybeta.github.io/](https://chybeta.github.io/)
