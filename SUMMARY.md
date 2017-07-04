@@ -4,6 +4,8 @@
 
 ## Web
 
+* [XML实体注入攻击](web/xmlshi-ti-zhu-ru-gong-ji.md)
+
 ## PWN
 
 ## Reverse
