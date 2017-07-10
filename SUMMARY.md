@@ -4,8 +4,9 @@
 
 ## Web
 
+* PHP弱类型安全总结
 * [XSS 总结](web/xss-zong-jie.md)
-* SQL注入总结
+* SQL注入
 * XPATH注入
 * [XML实体注入](web/xmlshi-ti-zhu-ru-gong-ji.md)
 * [php反序列化漏洞](web/qian-tan-php-fan-xu-lie-hua-lou-dong.md)
