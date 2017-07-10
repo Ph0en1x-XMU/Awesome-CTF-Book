@@ -12,6 +12,8 @@
 
 ## PWN
 
+* [pwntools简要教程](pwn/pwntoolsjian-yao-jiao-cheng.md)
+
 ## Reverse
 
 ## Mobile
