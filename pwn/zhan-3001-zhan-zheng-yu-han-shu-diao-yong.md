@@ -16,8 +16,7 @@ Linux的栈位于程序内存空间的末端，从**高地址向低地址**增�
 
 对于一个运行中的函数，其使用的栈帧区域被sp和bp寄存器限定（对于x86，sp等价esp，bp等价rsp；对于x64，sp等价rsp，bp等价rbp）。bp指向栈帧的底部，sp指向栈帧的顶部。
 
-![](/pic/pwn/stack-20170713.png)
-
+![](/pic/pwn/stack-20170713.png)  
 （图片来源：[http://witmax.cn/c-function-heap-stack.html](http://witmax.cn/c-function-heap-stack.html)）
 
 在函数中使用的所有变量（本地变量、实参），一般使用bp定位。设N为整型字节数，bp+2N是第一个实参的地址，bp-N是第一个本地变量的地址。
