@@ -2,7 +2,7 @@
 
 ## 栈
 
-栈是一个先入后出队列。关于算法栈，请Google或参考：<https://zh.wikipedia.org/wiki/堆栈> 。  
+栈是一个先入后出队列。关于算法栈，请自行箱包锁或参考：[https://zh.wikipedia.org/wiki/堆栈](https://zh.wikipedia.org/wiki/堆栈) 。  
 在操作系统中，一般用栈来保存函数的状态和局部变量。
 
 Linux的栈位于程序内存空间的末端，从**高地址向低地址**增长。  
