@@ -1,4 +1,4 @@
-# 命令执行函数
+# 命令执行 
 ## php代码执行
 + eval()
 + assert()
@@ -17,15 +17,21 @@
 + popen()
 + proc_open()
 + `(反单引号)
++ ob_start() 
++ escapeshellcmd() // 该函数用于过滤
 
-# 文件包含函数
+# 文件包含
+# 本地文件包含
 + require()
 + include()
 + include_once()
 + require_once()
 
+## 远程文件包含
++ allow_url_include = on
+
 # 读取文件函数
-（注：此部分来源[php花式读取文件函数汇总](http://www.jianshu.com/p/33bc37ef72cc)）
+
 ## 读文件
 
 + hightlight_file($filename);
@@ -64,3 +70,14 @@
 + unserialize()
 + ini_set('session.serialize_handler', 'php_serialize');
 
+# 文件上传
++ move_uploaded_file()
++ getimagesize() //验证文件头只要为GIF89a，就会返回真
+
+# 文件删除
++ unlink()
++ session_destroy()
+
+# Reference
++ [代码审计入门总结](http://blog.neargle.com/SecNewsBak/drops/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93.html)
++ [php花式读取文件函数汇总](http://www.jianshu.com/p/33bc37ef72cc)
