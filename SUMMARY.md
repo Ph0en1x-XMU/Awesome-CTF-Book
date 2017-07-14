@@ -4,12 +4,13 @@
 
 ## Web
 
-* PHP弱类型安全总结
+* [PHP弱类型安全总结](web/phpruo-lei-xing-an-quan-zong-jie.md)
 * [XSS 总结](web/xss-zong-jie.md)
-* SQL注入
-* XPATH注入
+* [SQL注入](web/sqlzhu-ru.md)
+* [XPATH注入](web/xpathzhu-ru.md)
 * [XML实体注入](web/xmlshi-ti-zhu-ru-gong-ji.md)
 * [php反序列化漏洞](web/qian-tan-php-fan-xu-lie-hua-lou-dong.md)
+* [php代码审计小总结](web/phpdai-ma-shen-ji-xiao-zong-jie.md)
 
 ## PWN
 
