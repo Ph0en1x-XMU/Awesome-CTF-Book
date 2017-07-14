@@ -1,4 +1,11 @@
-# 命令执行 
+---
+title: php代码审计小总结
+author: chybeta
+categories: Web安全
+---
+
+<!-- more -->
+# 命令执行
 ## php代码执行
 + eval()
 + assert()
@@ -17,7 +24,7 @@
 + popen()
 + proc_open()
 + `(反单引号)
-+ ob_start() 
++ ob_start()
 + escapeshellcmd() // 该函数用于过滤
 
 # 文件包含
@@ -58,8 +65,8 @@
 + print_r(glob("*")); // 列当前目录
 + print_r(glob("/*")); // 列根目录 print_r(scandir("."));
 + print_r(scandir("/"));
-+ $d=opendir(".");while(false!==($f=readdir($d))){echo"$f\n";}
-+ $d=dir(".");while(false!==($f=$d->read())){echo$f."\n";}
++ `$d=opendir(".");while(false!==($f=readdir($d))){echo"$f\n";}`
++ `$d=dir(".");while(false!==($f=$d->read())){echo$f."\n";}`
 
 
 ## 超全局变量
@@ -74,6 +81,14 @@
 + move_uploaded_file()
 + getimagesize() //验证文件头只要为GIF89a，就会返回真
 
+# 变量覆盖
++ extract()
++ import_request_variables()
++ parse_str()
++ mb_parse_str()
++ 全局变量覆盖：register_globals为ON，$GLOBALS
+
+
 # 文件删除
 + unlink()
 + session_destroy()
@@ -81,3 +96,4 @@
 # Reference
 + [代码审计入门总结](http://blog.neargle.com/SecNewsBak/drops/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93.html)
 + [php花式读取文件函数汇总](http://www.jianshu.com/p/33bc37ef72cc)
++ [Awesome-CTF-Book](https://book.ph0en1x.com/web/phpdai-ma-shen-ji-xiao-zong-jie.html)
