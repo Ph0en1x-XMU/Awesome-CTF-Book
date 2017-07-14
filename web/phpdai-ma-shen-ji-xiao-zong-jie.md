@@ -96,4 +96,4 @@ categories: Web安全
 # Reference
 + [代码审计入门总结](http://blog.neargle.com/SecNewsBak/drops/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93.html)
 + [php花式读取文件函数汇总](http://www.jianshu.com/p/33bc37ef72cc)
-+ [Awesome-CTF-Book](https://book.ph0en1x.com/web/phpdai-ma-shen-ji-xiao-zong-jie.html)
++ [php代码审计小总结](https://chybeta.github.io/2017/07/14/php%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%B0%8F%E6%80%BB%E7%BB%93/)
