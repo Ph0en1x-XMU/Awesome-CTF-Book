@@ -122,7 +122,7 @@ categories: Web安全
 + session_destroy()
 
 # 文件包含
-# 本地文件包含
+## 本地文件包含
 + require()
 + include()
 + include_once()
