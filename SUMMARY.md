@@ -4,6 +4,7 @@
 
 ## Web
 
+* [信息搜集](web/xin-xi-sou-ji.md)
 * [SQL注入](web/sqlzhu-ru.md)
 * [XPATH注入](web/xpathzhu-ru.md)
 * JSONP注入
@@ -17,8 +18,12 @@
 * [RPO\(relative path overwrite\)漏洞](web/rporelative-path-overwritelou-dong.md)
 * [File inclusion文件包含漏洞](web/file-inclusionwen-jian-bao-han-lou-dong.md)
 * [Code execution 代码执行漏洞](web/dai-ma-zhi-xing-lou-dong.md)
-* [php反序列化漏洞](web/qian-tan-php-fan-xu-lie-hua-lou-dong.md)
+* [PHP 反序列化漏洞](web/qian-tan-php-fan-xu-lie-hua-lou-dong.md)
+* PHP 内存破坏漏洞
+* PHP 伪协议总结
+* PHP mail header injection
 * [PHP弱类型安全总结](web/phpruo-lei-xing-an-quan-zong-jie.md)
+* 内网渗透
 
 ## PWN
 
