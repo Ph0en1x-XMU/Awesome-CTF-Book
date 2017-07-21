@@ -1,5 +1,5 @@
 # 原理
-当访问不存在的URL时，如“http://www.example.com/home.php/non-existent.css ”,浏览器发送get请求，依赖于使用的技术与配置，服务器返回了页面“http://www.example.com/home.php ”的内容，同时URL地址任然是“http://www.example.com/home.php/non-existent.css”，http头的内容也与直接访问“http://www.example.com/home.php ”相同，cacheing header、content-type（此处为text/html）也相同。
+当访问不存在的URL时，如“http://www.example.com/home.php/non-existent.css ”,浏览器发送get请求，依赖于使用的技术与配置，服务器返回了页面“http://www.example.com/home.php ”的内容，同时URL地址仍然是“http://www.example.com/home.php/non-existent.css”，http头的内容也与直接访问“http://www.example.com/home.php ”相同，cacheing header、content-type（此处为text/html）也相同。
 
 具体环节如下：
 1. 浏览器请求http://www.example.com/home.php/no-existent.css ；
