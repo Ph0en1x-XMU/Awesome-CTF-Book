@@ -9,6 +9,7 @@
 5. 在缓存目录下，代理服务器创建目录home.php，将返回的内容作为non-existent.css保存。
 
 # 攻击流程
+## 手动测试
 1. 发送 `http://www.vuln.com/admin.php/no-existent.css`
 2. 管理员（通常）查看，导致admin.php内容被缓存。
 3. hacker访问 `http://www.vuln.com/admin.php/no-existent.css`，获取敏感信息。
