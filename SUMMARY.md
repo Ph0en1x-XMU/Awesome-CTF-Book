@@ -10,7 +10,7 @@
 * JSONP注入
 * [XML实体注入](web/xmlshi-ti-zhu-ru-gong-ji.md)
 * [XSS 跨站脚本攻击](web/xss-zong-jie.md)
-* CSRF 跨站请求伪造
+* [CSRF 跨站请求伪造](web/csrf-kua-zhan-qing-qiu-wei-zao.md)
 * [SSRF 服务端请求伪造](web/phpdai-ma-shen-ji-xiao-zong-jie/ssrf-fu-wu-qi-duan-qing-qiu-wei-zao.md)
 * SSTI 服务器模板注入
 * File upload 文件上传漏洞
