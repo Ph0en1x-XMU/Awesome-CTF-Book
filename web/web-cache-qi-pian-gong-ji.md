@@ -13,6 +13,9 @@
 2. 管理员（通常）查看，导致admin.php内容被缓存。
 3. hacker访问 `http://www.vuln.com/admin.php/no-existent.css`，获取敏感信息。
 
+## 工具
++ [Airachnid Burp Extension](https://github.com/SpiderLabs/Airachnid-Burp-Extension)
+
 # 案例
 + [CTFzone17-TimeHackers](https://ctftime.org/writeup/6973)
 
@@ -20,4 +23,4 @@
 + [Web Cache Deception Attack](http://omergil.blogspot.jp/2017/02/web-cache-deception-attack.html)
 + [浅析 Web Cache 欺骗攻击](http://bobao.360.cn/learning/detail/3828.html)
 + [On Web Cache Deception Attacks](https://blogs.akamai.com/2017/03/on-web-cache-deception-attacks.html)
-+ [Airachnid Burp Extension](https://github.com/SpiderLabs/Airachnid-Burp-Extension)
+
