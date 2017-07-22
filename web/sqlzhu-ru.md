@@ -6,7 +6,7 @@ categories: Web安全
 copyright: true
 ---
 # 0X00 简介
-
+所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。
 # 0X01 基本
 ## 查看当前数据库版本
 + VERSION()
