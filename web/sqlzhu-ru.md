@@ -5,9 +5,9 @@ tags: [CTF,SQL注入,web]
 categories: Web安全
 copyright: true
 ---
-# 0X00 简介
+# 0x00 简介
 所谓SQL注入，就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。
-# 0X01 基本
+# 0x01 基本
 ## 查看当前数据库版本
 + VERSION()
 + @@VERSION
@@ -71,7 +71,7 @@ copyright: true
 	+  /\*! select \* from test \*/
 	+ 语句会被执行
 
-# 0X02 注入技术
+# 0x02 注入技术
 ## 判断是否存在注入
 假设有: www.test.com/chybeta.php?id=1
 ### 数值型注入
@@ -334,7 +334,7 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 
 ## PDO堆查询
 
-# 0X03 绕过技巧
+# 0x03 绕过技巧
 请见：[WAF Bypass:SQL Injection](https://chybeta.gitbooks.io/waf-bypass/content/sql-injection/ji-ben-guo-waf-zi-shi-hui-zong.html)
 ##  sqlmap-tamper编写
 
@@ -343,12 +343,12 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 + mysql5.1以后 udf 导入xx\\lib\\plugin\\ 目录下
 +  mysql5.x以后 system执行命令
 
-# 0X05 常见sql注入位置
+# 0x05 常见sql注入位置
 + 常见GET、POST参数
 + 登陆框
 + http头
 
-# 0X06 工具
+# 0xx06 工具
 ## 自动sql注入测试
 + [sqlmap](http://sqlmap.org/)
 + Pangolin
@@ -358,7 +358,7 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 + [Burp Suite](https:s//portswigger.net/burp/)
 + [firefox::HackBar](https://addons.mozilla.org/en-US/firefox/addon/hackbar1/?src=search)
 
-# 0X07 参考
+# 0x07 参考
 + [MySQL_Testing_Injection](http://websec.ca/kb/sql_injection#MySQL_Testing_Injection)
 + [MySQL SQL Injection Cheat Sheet](http://www.sqlinjectionwiki.com/Categories/2/mysql-sql-injection-cheat-sheet/)
 + [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#Enablecmdshell)
