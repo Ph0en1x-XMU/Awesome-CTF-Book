@@ -348,7 +348,7 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 + 登陆框
 + http头
 
-# 0X06工具
+# 0X06 工具
 ## 自动sql注入测试
 + [sqlmap](http://sqlmap.org/)
 + Pangolin
@@ -358,7 +358,7 @@ UNION SELECT  "<?php eval($_POST['chybeta'])?>" INTO OUTFILE 'C:/phpstudy/WWW/te
 + [Burp Suite](https:s//portswigger.net/burp/)
 + [firefox::HackBar](https://addons.mozilla.org/en-US/firefox/addon/hackbar1/?src=search)
 
-# 0X07参考
+# 0X07 参考
 + [MySQL_Testing_Injection](http://websec.ca/kb/sql_injection#MySQL_Testing_Injection)
 + [MySQL SQL Injection Cheat Sheet](http://www.sqlinjectionwiki.com/Categories/2/mysql-sql-injection-cheat-sheet/)
 + [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/#Enablecmdshell)
