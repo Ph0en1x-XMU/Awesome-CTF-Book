@@ -7,7 +7,7 @@ copyright: true
 ---
 php代码审计小总结
 <!-- more -->
-# 命令执行
+# 0x01 命令执行
 ## php代码执行
 + eval()
 + assert()
@@ -29,15 +29,15 @@ php代码审计小总结
 + ob_start()
 + escapeshellcmd() // 该函数用于过滤
 
-# 文件上传
+# 0x02 文件上传
 + move_uploaded_file()
 + getimagesize() //验证文件头只要为GIF89a，就会返回真
 
-# 文件删除
+# 0x03 文件删除
 + unlink()
 + session_destroy()
 
-# 文件包含
+# 0x04 文件包含
 ## 本地文件包含
 + require()
 + include()
@@ -47,7 +47,7 @@ php代码审计小总结
 ## 远程文件包含
 + allow_url_include = on
 
-# 文件读取
+# 0x05 文件读取
 
 ## 读文件
 
@@ -82,7 +82,7 @@ php代码审计小总结
 ## 超全局变量
 + [$GLOBALS](http://php.net/manual/zh/language.variables.superglobals.php)
 
-# 变量覆盖
+# 0x06 变量覆盖
 + extract()
 + import_request_variables()
 + parse_str()
@@ -90,13 +90,13 @@ php代码审计小总结
 + 全局变量覆盖：register_globals为ON，$GLOBALS
 
 
-# php序列化函数
+# 0x07 php序列化函数
 + serialize()
 + unserialize()
 + ini_set('session.serialize_handler', 'php_serialize');
 
 
-# Reference
+# 0x08 Reference
 + [代码审计入门总结](http://blog.neargle.com/SecNewsBak/drops/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%85%A5%E9%97%A8%E6%80%BB%E7%BB%93.html)
 + [php花式读取文件函数汇总](http://www.jianshu.com/p/33bc37ef72cc)
 + [代码审计小结](https://chybeta.github.io/2017/07/14/php%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%B0%8F%E6%80%BB%E7%BB%93/)
