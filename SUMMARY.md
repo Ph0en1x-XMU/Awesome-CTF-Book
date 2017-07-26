@@ -20,10 +20,11 @@
 * [Code execution 代码执行漏洞](web/dai-ma-zhi-xing-lou-dong.md)
 * [PHP 反序列化漏洞](web/qian-tan-php-fan-xu-lie-hua-lou-dong.md)
 * PHP 内存破坏漏洞
-* PHP 伪协议总结
-* PHP mail header injection
+* [PHP 伪协议总结](web/php-wei-xie-yi-zong-jie.md)
+* [PHP mail header injection](web/php-mail-header-injection.md)
 * [PHP弱类型安全总结](web/phpruo-lei-xing-an-quan-zong-jie.md)
-* 内网渗透
+* [PHP 代码审计小结](web/php-dai-ma-shen-ji-xiao-jie.md)
+* [内网渗透](web/nei-wang-shen-tou.md)
 
 ## PWN
 
