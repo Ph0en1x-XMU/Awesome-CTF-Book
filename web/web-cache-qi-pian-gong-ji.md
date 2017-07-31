@@ -10,6 +10,10 @@
 
 等客户端再次发起请求时，这些被缓存的内容将由缓存服务器直接向客户端返还。从而更快的响应用户的请求。
 
+## 常见web框架缓存
+
+## 现有缓存机制
+
 ## 欺骗方法
 当访问不存在的URL时，如`http://www.example.com/home.php/non-existent.css`,浏览器发送get请求，依赖于使用的技术与配置，服务器返回了页面`http://www.example.com/home.php `的内容，同时URL地址仍然是`http://www.example.com/home.php/non-existent.css`，http头的内容也与直接访问`http://www.example.com/home.php `相同，cacheing header、content-type（此处为text/html）也相同。
 
@@ -37,7 +41,13 @@
 + [Airachnid Burp Extension](https://github.com/SpiderLabs/Airachnid-Burp-Extension)
 
 # 0x03 案例
+
+
+
+## CTF
 + [CTFzone17-TimeHackers](https://ctftime.org/writeup/6973)
+
+
 
 # 0x04 参考
 + [](http://bobao.360.cn/learning/detail/4175.html)
