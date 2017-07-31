@@ -19,6 +19,17 @@ bucketname.s3.amazonaws.com
 aws s3 ls s3://$bucketname/ --region $region
 ```
 
+3.利用。当确定Bucket后，就可以直接利用awscli进行各种命令。
++ 列举目录
+```
+aws s3 ls s3://$bucketname
+
+```
+
++ 上传
+```
+aws s3 mv localfile s3://$bucketname
+```
     
 
 ## 参考
