@@ -12,14 +12,13 @@ bucketname.s3.amazonaws.com
 ```
 假设目前已经确认www.example.com使用了s3服务：
 
-
     1. 用浏览器访问：http://www.example.me.s3.amazonaws.com 若成功则返回xml样式。
 ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170731/2.jpg?raw=true)
-
     2.利用awscli工具探测。
-    ```
-    aws s3 ls s3://$bucketname/ --region $region
-    ```
+```
+aws s3 ls s3://$bucketname/ --region $region
+```
+
     
 
 ## 参考
