@@ -6,7 +6,9 @@
 + 反向代理（Reverse proxy）
 
 ## 缓存工作流程
-当某个静态文件被第一次请求时，请求会直接穿透缓存服务器直接到达web服务器。在web服务器返回内容后，缓存服务器会根据接收到的文件的类型，根据缓存规则决定是否缓存。通常情况下，缓存服务器会根据URL尾部信息来选择，比如对公共文件（样式表CSS，脚本JS，文本文件txt等）进行缓存
+当某个静态文件被第一次请求时，请求会直接穿透缓存服务器直接到达web服务器。在web服务器返回内容后，缓存服务器会根据接收到的文件的类型，根据缓存规则决定是否缓存。通常情况下，缓存服务器会根据URL尾部信息来选择，比如对公共文件（样式表CSS，脚本JS，文本文件txt等）进行缓存。
+
+等客户端再次发起请求时，这些被缓存的内容将由缓存服务器直接向客户端返还。从而更快的响应用户的请求。
 
 当访问不存在的URL时，如`http://www.example.com/home.php/non-existent.css`,浏览器发送get请求，依赖于使用的技术与配置，服务器返回了页面`http://www.example.com/home.php `的内容，同时URL地址仍然是`http://www.example.com/home.php/non-existent.css`，http头的内容也与直接访问`http://www.example.com/home.php `相同，cacheing header、content-type（此处为text/html）也相同。
 
