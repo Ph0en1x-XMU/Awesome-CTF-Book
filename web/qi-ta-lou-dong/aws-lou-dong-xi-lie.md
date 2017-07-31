@@ -14,7 +14,7 @@ bucketname.s3.amazonaws.com
 
     1. 用浏览器访问：http://www.example.me.s3.amazonaws.com 若成功则返回xml样式。
 ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170731/2.jpg?raw=true)
-    2.利用awscli工具探测。
+    2. 利用awscli工具探测。
 ```
 aws s3 ls s3://$bucketname/ --region $region
 ```
