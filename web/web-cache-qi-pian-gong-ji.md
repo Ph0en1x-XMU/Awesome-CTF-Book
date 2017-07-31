@@ -46,7 +46,7 @@
 
 
 # 0x04 参考
-+ [](http://bobao.360.cn/learning/detail/4175.html)
++ [【Blackhat】详解Web缓存欺骗攻击](http://bobao.360.cn/learning/detail/4175.html)
 + [Web Cache Deception Attack](http://omergil.blogspot.jp/2017/02/web-cache-deception-attack.html)
 + [浅析 Web Cache 欺骗攻击](http://bobao.360.cn/learning/detail/3828.html)
 + [On Web Cache Deception Attacks](https://blogs.akamai.com/2017/03/on-web-cache-deception-attacks.html)
