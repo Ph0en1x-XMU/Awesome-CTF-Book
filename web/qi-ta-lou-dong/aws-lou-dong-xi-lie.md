@@ -4,7 +4,7 @@
 
 ## 渗透流程
 1. 利用nslookup确定是否是s3服务
-![]()
+![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170731/1.jpg?raw=true)
 
 2. Bucket名称枚举
 
