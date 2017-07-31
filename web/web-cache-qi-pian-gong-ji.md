@@ -21,6 +21,13 @@
 5. 在缓存目录下，代理服务器创建目录home.php，将返回的内容作为non-existent.css保存。
 
 # 0x02 攻击流程
+## 攻击条件
+1、当访问如“http://www.example.com/home.php/nonexistent.css” 之类的页面时，服务器需要返回对应的home.php的内容。
+
+2、Web应用启用了Web缓存功能，并且会根据文件的扩展名来缓存，同时会忽略掉任何缓存头部。
+
+3、受害者在访问恶意URL地址时必须已经过认证。
+
 ## 手动测试
 1. 发送 `http://www.vuln.com/admin.php/no-existent.css`
 2. 管理员（通常）查看，导致admin.php内容被缓存。
