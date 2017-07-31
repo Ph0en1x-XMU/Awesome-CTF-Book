@@ -23,7 +23,6 @@ aws s3 ls s3://$bucketname/ --region $region
 + 列举目录
 ```
 aws s3 ls s3://$bucketname
-
 ```
 
 + 上传
