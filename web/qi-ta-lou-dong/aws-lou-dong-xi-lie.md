@@ -6,11 +6,15 @@
 1. 利用nslookup确定是否是s3服务
 ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170731/1.jpg?raw=true)
 
-2. Bucket名称枚举
+2. Bucket名称枚举。使用子域，域和顶级域的组合来确定目标S3上是否有bucket。假设目前已经确认www.example.com使用了s3服务：
+
+    1. 用浏览器访问：http://www.example.me.s3.amazonaws.com 若成功则返回xml样式。
+    ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170731/2.jpg?raw=true)
+    
+    2. liyong 
 
 ## 参考
-+ [
-针对亚马逊云存储器S3 BUCKET的渗透测试 ](http://www.freebuf.com/articles/web/135313.html)
++ [针对亚马逊云存储器S3 BUCKET的渗透测试 ](http://www.freebuf.com/articles/web/135313.html)
 
 # 漏洞实践
 + [flAWS challenge](http://flaws.cloud/)
