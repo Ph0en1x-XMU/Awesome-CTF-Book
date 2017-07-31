@@ -19,12 +19,14 @@
 * [特定场景漏洞](web/qi-ta-lou-dong.md)
   * [AWS 漏洞系列](web/qi-ta-lou-dong/aws-lou-dong-xi-lie.md)
   * 未授权访问漏洞
-    * redis未授权访问漏洞
-    * [Docker Remote API未授权访问漏洞](web/qi-ta-lou-dong/docker-remote-apiwei-shou-quan-fang-wen-lou-dong.md)
-    * CouchDB未授权访问漏洞
-    * memcache 未授权访问漏洞
-    * Jenkins 未授权访问漏洞
-    * PHP-FPM未授权访问漏洞
+    * redis未授权访问
+    * CouchDB未授权访问
+    * [Docker Remote API未授权访问](web/qi-ta-lou-dong/docker-remote-apiwei-shou-quan-fang-wen-lou-dong.md)
+    * memcache 未授权访问
+    * [Jenkins 未授权访问](web/qi-ta-lou-dong/jenkins-wei-shou-quan-fang-wen-lou-dong.md)
+    * PHP-FPM未授权访问
+    * rsync 未授权访问
+    * Mongodb未授权访问
 * [PHP 安全](web/php-an-quan.md)
   * [PHP 反序列化漏洞](web/php-an-quan/php-fan-xu-lie-hua-lou-dong.md)
   * [PHP 代码审计小结](web/php-an-quan/php-dai-ma-shen-ji-xiao-jie.md)
