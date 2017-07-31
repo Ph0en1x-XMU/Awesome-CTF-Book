@@ -18,6 +18,7 @@
   * [Web Cache 欺骗攻击](web/fu-wu-qi-duan-lou-dong/web-cache-qi-pian-gong-ji.md)
 * [特定场景漏洞](web/qi-ta-lou-dong.md)
   * [AWS 漏洞系列](web/qi-ta-lou-dong/aws-lou-dong-xi-lie.md)
+    * [S3 Bucket信息泄露](web/qi-ta-lou-dong/aws-lou-dong-xi-lie/s3-bucketxin-xi-xie-lu.md)
   * 未授权访问漏洞
     * redis未授权访问
     * CouchDB未授权访问
