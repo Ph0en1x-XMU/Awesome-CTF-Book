@@ -24,6 +24,7 @@
     * CouchDB未授权访问漏洞
     * memcache 未授权访问漏洞
     * Jenkins 未授权访问漏洞
+    * PHP-FPM未授权访问漏洞
 * [PHP 安全](web/php-an-quan.md)
   * [PHP 反序列化漏洞](web/php-an-quan/php-fan-xu-lie-hua-lou-dong.md)
   * [PHP 代码审计小结](web/php-an-quan/php-dai-ma-shen-ji-xiao-jie.md)
