@@ -19,8 +19,9 @@
 * [特定场景漏洞](web/qi-ta-lou-dong.md)
   * [AWS 漏洞系列](web/qi-ta-lou-dong/aws-lou-dong-xi-lie.md)
   * 未授权访问漏洞
-    * Docker Remote API未授权访问漏洞
     * redis未授权访问漏洞
+    * Docker Remote API未授权访问漏洞
+    * CouchDB未授权访问漏洞
 * [PHP 安全](web/php-an-quan.md)
   * [PHP 反序列化漏洞](web/php-an-quan/php-fan-xu-lie-hua-lou-dong.md)
   * [PHP 代码审计小结](web/php-an-quan/php-dai-ma-shen-ji-xiao-jie.md)
