@@ -10,7 +10,7 @@
   * [XML实体注入](web/zhu-ru/xmlshi-ti-zhu-ru.md)
 * [PHP 安全](web/php-an-quan.md)
   * [PHP 反序列化漏洞](web/php-an-quan/php-fan-xu-lie-hua-lou-dong.md)
-* [XML实体注入](web/xmlshi-ti-zhu-ru-gong-ji.md)
+  * [PHP 代码审计小结](web/php-an-quan/php-dai-ma-shen-ji-xiao-jie.md)
 * [JSONP注入](web/jsonpzhu-ru.md)
 * [XSS 跨站脚本攻击](web/xss-zong-jie.md)
 * [CSRF 跨站请求伪造](web/csrf-kua-zhan-qing-qiu-wei-zao.md)
@@ -20,7 +20,6 @@
 * [Web Cache 欺骗攻击](web/web-cache-qi-pian-gong-ji.md)
 * [RPO\(relative path overwrite\)漏洞](web/rporelative-path-overwritelou-dong.md)
 * [File inclusion文件包含漏洞](web/file-inclusionwen-jian-bao-han-lou-dong.md)
-* [PHP 反序列化漏洞](web/qian-tan-php-fan-xu-lie-hua-lou-dong.md)
 * PHP 内存破坏漏洞
 * [PHP 伪协议总结](web/php-wei-xie-yi-zong-jie.md)
 * [PHP mail header injection](web/php-mail-header-injection.md)
