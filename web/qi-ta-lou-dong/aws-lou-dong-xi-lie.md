@@ -1,5 +1,12 @@
 # 漏洞一：S3 Bucket信息泄露
+## 介绍
+亚马逊简单存储服务（S3）是一种AWS服务，主要用以向用户提供一种安全的数据存储方式。
+
 ## 
+
+## 参考
++ [
+针对亚马逊云存储器S3 BUCKET的渗透测试 ](http://www.freebuf.com/articles/web/135313.html)
 
 # 漏洞实践
 + [flAWS challenge](http://flaws.cloud/)
