@@ -15,9 +15,9 @@
 * [常见漏洞](web/fu-wu-qi-duan-lou-dong.md)
   * SSRF 服务端请求伪造
   * File upload 文件上传漏洞
-* [其他漏洞](web/qi-ta-lou-dong.md)
-  * [Web Cache 欺骗攻击](web/qi-ta-lou-dong/web-cache-qi-pian-gong-ji.md)
-  * RPO\(relative path overwrite\)漏洞
+  * [Web Cache 欺骗攻击](web/fu-wu-qi-duan-lou-dong/web-cache-qi-pian-gong-ji.md)
+* [特定场景漏洞](web/qi-ta-lou-dong.md)
+  * AWS 漏洞系列
 * [PHP 安全](web/php-an-quan.md)
   * [PHP 反序列化漏洞](web/php-an-quan/php-fan-xu-lie-hua-lou-dong.md)
   * [PHP 代码审计小结](web/php-an-quan/php-dai-ma-shen-ji-xiao-jie.md)
