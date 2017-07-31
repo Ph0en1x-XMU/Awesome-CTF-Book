@@ -5,9 +5,11 @@
 ## Web
 
 * [信息搜集](web/xin-xi-sou-ji.md)
+* [注入](web/zhu-ru.md)
+  * [SQL注入](web/zhu-ru/sqlzhu-ru.md)
 * [SQL注入](web/sqlzhu-ru.md)
 * [XPATH注入](web/xpathzhu-ru.md)
-* JSONP注入
+* [JSONP注入](web/jsonpzhu-ru.md)
 * [XML实体注入](web/xmlshi-ti-zhu-ru-gong-ji.md)
 * [XSS 跨站脚本攻击](web/xss-zong-jie.md)
 * [CSRF 跨站请求伪造](web/csrf-kua-zhan-qing-qiu-wei-zao.md)
@@ -25,6 +27,7 @@
 * [PHP弱类型安全总结](web/phpruo-lei-xing-an-quan-zong-jie.md)
 * [PHP 代码审计小结](web/php-dai-ma-shen-ji-xiao-jie.md)
 * [内网渗透](web/nei-wang-shen-tou.md)
+* [其他漏洞](web/qi-ta-lou-dong.md)
 
 ## PWN
 
