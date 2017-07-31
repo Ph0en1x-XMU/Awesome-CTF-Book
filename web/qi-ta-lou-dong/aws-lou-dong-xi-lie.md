@@ -27,9 +27,14 @@ aws s3 ls s3://$bucketname
 
 + 上传
 ```
-aws s3 mv localfile s3://$bucketname
+aws s3 mv localfile s3://$bucketname/prefixdir
 ```
-    
+
++ 下载文件
+```
+aws sync [--delete] s3://$bucketname
+/prefixdir /to/local/dir
+```
 
 ## 参考
 + [针对亚马逊云存储器S3 BUCKET的渗透测试 ](http://www.freebuf.com/articles/web/135313.html)
