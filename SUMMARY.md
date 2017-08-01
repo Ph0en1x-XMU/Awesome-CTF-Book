@@ -39,6 +39,7 @@
 ## PWN
 
 * [pwntools简要教程](pwn/pwntoolsjian-yao-jiao-cheng.md)
+* [从任意地址写到控制执行流的方法总结](pwn/cong-ren-yi-di-zhi-xie-dao-kong-zhi-zhi-xing-liu-de-fang-fa-zong-jie.md)
 
 ## Reverse
 
