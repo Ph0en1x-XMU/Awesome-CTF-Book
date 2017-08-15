@@ -12,6 +12,7 @@
 * [前端安全](web/qian-duan-an-quan.md)
   * XSS 跨站脚本攻击
   * CSRF 跨站请求伪造
+  * [Html5 特性](web/qian-duan-an-quan/html5-te-xing.md)
 * [常见漏洞](web/fu-wu-qi-duan-lou-dong.md)
   * SSRF 服务端请求伪造
   * File upload 文件上传漏洞
@@ -37,6 +38,7 @@
   * PHP 内存破坏漏洞
   * PHP mail header injection
   * PHP弱类型安全总结
+* 逻辑漏洞
 
 ## PWN
 
