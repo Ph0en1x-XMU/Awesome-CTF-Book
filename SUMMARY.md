@@ -20,7 +20,7 @@
   * [AWS 漏洞系列](web/qi-ta-lou-dong/aws-lou-dong-xi-lie.md)
     * [S3 Bucket信息泄露](web/qi-ta-lou-dong/aws-lou-dong-xi-lie/s3-bucketxin-xi-xie-lu.md)
   * 未授权访问漏洞
-    * redis未授权访问
+    * [redis未授权访问](web/qi-ta-lou-dong/rediswei-shou-quan-fang-wen.md)
     * CouchDB未授权访问
     * [Docker Remote API未授权访问](web/qi-ta-lou-dong/docker-remote-apiwei-shou-quan-fang-wen-lou-dong.md)
     * memcache 未授权访问
