@@ -16,3 +16,6 @@ http://127.0.0.1:8080/examples/servlets/servlet/SessionExample
 提交后显示login=admin已经写入session
 
 再次打开index.jsp，显示成功登录
+
+# 0x03 案例
++ XDCTF-2015 web2 Apache Tomcat session操纵漏洞
