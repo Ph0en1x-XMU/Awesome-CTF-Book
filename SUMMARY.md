@@ -28,6 +28,8 @@
     * PHP-FPM未授权访问
     * rsync 未授权访问
     * Mongodb未授权访问
+  * 服务器配置问题
+    * [Apache Tomcat样例目录session操纵漏洞](web/qi-ta-lou-dong/apache-tomcatyang-li-mu-lu-session-cao-zong-lou-dong.md)
 * [PHP 安全](web/php-an-quan.md)
   * [PHP 反序列化漏洞](web/php-an-quan/php-fan-xu-lie-hua-lou-dong.md)
   * [PHP 代码审计小结](web/php-an-quan/php-dai-ma-shen-ji-xiao-jie.md)
