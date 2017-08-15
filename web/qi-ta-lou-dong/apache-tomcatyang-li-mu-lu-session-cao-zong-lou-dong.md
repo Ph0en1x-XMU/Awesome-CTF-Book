@@ -1,5 +1,7 @@
 # 0x01 介绍
-Apache Tomcat默认安装包含”/examples”目录，里面存着众多的样例，其中session样例(/examples/servlets /servlet/SessionExample)允许用户对session进行操纵。因为session是全局通用的，所以用户可以通过操纵 session获取管理员权限。 
+Apache Tomcat默认安装包含”/examples”目录，里面存着众多的样例，其中session样例(/examples/servlets /servlet/SessionExample)允许用户对session进行操纵。
+
+因为session是全局通用的，所以用户可以通过操纵 session获取管理员权限。 
 
 # 0x02 测试流程
 访问：
