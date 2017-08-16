@@ -50,6 +50,6 @@ call_user_func('assert', 'phpinfo();');
 ```
 
 # php7.1
-
 http://php.net/manual/zh/migration71.new-features.php
+
 1. 废除mb_ereg_replace()和mb_eregi_replace()的Eval选项
