@@ -37,7 +37,8 @@
   * PHP 伪协议总结
   * PHP 内存破坏漏洞
   * PHP mail header injection
-  * [PHP弱类型安全总结](web/php-an-quan/phpruo-lei-xing-an-quan-zong-jie.md)
+  * [PHP 弱类型安全总结](web/php-an-quan/phpruo-lei-xing-an-quan-zong-jie.md)
+  * [PHP 各版本特性](web/php-an-quan/phpge-ban-ben-te-xing.md)
 * [逻辑漏洞](web/luo-ji-lou-dong.md)
 * [CTF-Web Trick](web/ctf-web-trick.md)
 
