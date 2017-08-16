@@ -14,6 +14,7 @@ http://php.net/manual/zh/wrappers.phar.php
 
 2. 新的全局变量__DIR__
 3. 默认开启<?= $xxoo;?>，5.4也可用
+
 # php5.4
 
 1. 移除安全模式、魔术引号
