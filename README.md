@@ -22,7 +22,7 @@
   [https://chybeta.github.io/](https://chybeta.github.io/)
 * lzhtony &emsp;&emsp; 
   [https://lxpark.com/](https://lxpark.com/)
-* lxzmads&emsp;&emsp;[http://blog.madsome.cn/](http://blog.madsome.cn/)
+* lxzmads&emsp;&emsp;[https://madsome.cn/](https://madsome.cn/)
 
 如有任何错误，请不吝指正。同时也希望能有更多的人加入到我们中间来，参与一起写作。
 
