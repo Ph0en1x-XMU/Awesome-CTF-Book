@@ -183,3 +183,4 @@ xxe.xml中定义和引用了`%payload2`,在通过`%dtd`引入xxe.xml后，得以
 + [AliCTF-Quals-2014 WebA-300](http://z1ng.net/post/thoughts/alictf-2014-writeup)
 + [HCTF-2016 大图书管的牧羊人&&魔法禁书目录](https://github.com/iAklis/epub-library-challenge)
 + [GoSecure-CTF-2015 web-300](https://gist.github.com/h3xstream/3d51b99f651548f7fa2b)
+

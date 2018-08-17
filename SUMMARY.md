@@ -7,7 +7,7 @@
 * [信息搜集](web/xin-xi-sou-ji.md)
 * [注入攻击](web/zhu-ru.md)
   * [SQL注入](web/zhu-ru/sqlzhu-ru.md)
-  * [XML实体注入](web/zhu-ru/xmlshi-ti-zhu-ru.md)
+  * [XML实体注入](web/zhu-ru/xmlshi-ti-zhu-ru.md) 
   * SSTI 服务器模板注入
 * [前端安全](web/qian-duan-an-quan.md)
   * XSS 跨站脚本攻击
@@ -55,6 +55,8 @@
 
 ## Crypto
 
+- [RSA 安全问题](crypto/rsa-attack.md) 
+
 ## Misc
 
 * [zip总结](misc/zipzong-jie.md)
@@ -64,4 +66,5 @@
 ## Others
 
 * [CTF常用工具整理](others/ctfchang-yong-gong-ju-zheng-li.md)
+* [渗透测试工具备忘录](others/PenetrationTool.md) 
 
