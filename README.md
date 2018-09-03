@@ -23,7 +23,7 @@
 * lzhtony &emsp;&emsp; 
   [https://lxpark.com/](https://lxpark.com/)
 * lxzmads &emsp;&emsp; 
-  [https://madsome.cn/](https://madsome.cn/) 
+  [https://madsome.one/](https://madsome.one/) 
 * findneo &emsp;&emsp; 
   [https://github.com/findneo](https://github.com/findneo) 
 
