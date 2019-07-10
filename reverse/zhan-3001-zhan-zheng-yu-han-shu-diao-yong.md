@@ -16,7 +16,7 @@ Linux的栈位于程序内存空间的末端，从**高地址向低地址**增�
 
 对于一个运行中的函数，其使用的栈帧区域被sp和bp寄存器限定（对于x86，sp等价esp，bp等价rsp；对于x64，sp等价rsp，bp等价rbp）。bp指向栈帧的底部，sp指向栈帧的顶部。
 
-![](/pic/pwn/stack-20170713.png)  
+![](../.gitbook/assets/stack-20170713.png)  
 （图片来源：[http://witmax.cn/c-function-heap-stack.html](http://witmax.cn/c-function-heap-stack.html)）
 
 在函数中使用的所有变量（本地变量、实参），一般使用bp定位。设N为整型字节数，bp+2N是第一个实参的地址，bp-N是第一个本地变量的地址。
@@ -40,7 +40,7 @@ Linux的栈位于程序内存空间的末端，从**高地址向低地址**增�
 
 父函数调用时，会把参数从右至左入栈，实现保存函数实参的功能：
 
-```assembly
+```text
 push c  
 push b  
 push a
@@ -48,13 +48,13 @@ push a
 
 然后执行call指令：
 
-```assembly
+```text
 call func
 ```
 
 这里call指令内部实际上做了两个工作，一个是将这个call指令的下一条语句入栈，实现返回地址的保存。然后把执行流跳转到函数里。所以一个call指令从功能上可以拆分为以下两个指令：
 
-```assembly
+```text
 push 本call指令下一条指令的地址  
 jmp func
 ```
@@ -62,19 +62,19 @@ jmp func
 执行流到了func函数内部，会先进行父函数栈帧信息的保存。此时esp和ebp依然维持父函数的栈帧。  
 当前子函数所有的栈中变量被释放后，esp会回到函数调用前的状态，因此无需保存esp，只要保存ebp的信息即可。
 
-```assembly
+```text
 push ebp
 ```
 
 此时，子函数的栈帧底部变到esp处：
 
-```assembly
+```text
 mov ebp, esp
 ```
 
 栈帧底部设置完毕后，可以为局部变量开辟空间，这里开辟了一个32（0x20）字节的栈空间：
 
-```assembly
+```text
 sub esp, 20h
 ```
 
@@ -84,19 +84,19 @@ sub esp, 20h
 
 在函数的功能代码全部执行完毕后，释放之前开辟的栈空间：
 
-```assembly
+```text
 add esp, 20h
 ```
 
 此时esp恢复到压入ebp之后的状态，这时栈顶为父函数的ebp值，可以依据这个信息恢复父函数的ebp，进而恢复栈帧：
 
-```assembly
+```text
 pop ebp
 ```
 
 当前栈顶为返回地址，这时父函数的栈信息已经恢复，只要根据这个返回地址更改执行流，回到父函数call func指令的下一条指令即可。
 
-```assembly
+```text
 retn
 ```
 

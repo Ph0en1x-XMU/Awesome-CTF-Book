@@ -1,8 +1,10 @@
-# 序列化与反序列化
+# PHP 反序列化漏洞
+
+## 序列化与反序列化
 
 php中有两个函数[serialize\(\)](http://php.net/manual/zh/function.serialize.php) 和[unserialize\(\)](http://php.net/manual/zh/function.unserialize.php)。
 
-## serialize\(\)
+### serialize\(\)
 
 当在php中创建了一个对象后，可以通过serialize\(\)把这个对象转变成一个字符串，保存对象的值方便之后的传递与使用。测试代码如下；
 
@@ -20,13 +22,13 @@ print_r($class1_ser);
 
 这边我们创建了一个新的对象，并且将其序列化后的结果打印出来：
 
-```
+```text
 O:7:"chybeta":1:{s:4:"test";s:3:"123";}
 ```
 
 这里的`O`代表存储的是对象（object）,假如你给serialize\(\)传入的是一个数组，那它会变成字母a。`7`表示对象的名称有7个字符。`"chybeta"`表示对象的名称。`1`表示有一个值。`{s:4:"test";s:3:"123";}`中，`s`表示字符串，`4`表示该字符串的长度，`"test"`为字符串的名称，之后的类似。
 
-## unserialize\(\)
+### unserialize\(\)
 
 与 serialize\(\) 对应的，unserialize\(\)可以从已存储的表示中创建PHP的值，单就本次所关心的环境而言，可以从序列化后的结果中恢复对象（object）。
 
@@ -49,13 +51,13 @@ print_r($class2_ser);
 
 这里提醒一下，当使用 unserialize\(\) 恢复对象时， 将调用 \_\_wakeup\(\) 成员函数。
 
-# 反序列化漏洞
+## 反序列化漏洞
 
 由前面可以看出，当传给 unserialize\(\) 的参数可控时，我们可以通过传入一个精心构造的序列化字符串，从而控制对象内部的变量甚至是函数。
 
-## 利用构造函数等
+### 利用构造函数等
 
-### Magic function
+#### Magic function
 
 php中有一类特殊的方法叫“[Magic function](https://secure.php.net/manual/zh/language.oop5.magic.php)”， 这里我们着重关注一下几个：
 
@@ -95,9 +97,9 @@ echo "</br>";
 
 ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170617/2.jpg?raw=true)
 
-### 利用场景
+#### 利用场景
 
-#### \_\_wakeup\(\) 或\_\_destruct\(\)
+**\_\_wakeup\(\) 或\_\_destruct\(\)**
 
 由前可以看到，unserialize\(\)后会导致\_\_wakeup\(\) 或\_\_destruct\(\)的直接调用，中间无需其他过程。因此最理想的情况就是一些漏洞/危害代码在\_\_wakeup\(\) 或\_\_destruct\(\)中，从而当我们控制序列化字符串时可以去直接触发它们。这里针对 \_\_wakeup\(\) 场景做个实验。假设index源码如下：
 
@@ -145,13 +147,13 @@ $class4->test = "<?php phpinfo(); ?>";    $class4_ser = serialize($class4);    p
 
 由此得到序列化结果：
 
-```
+```text
 O:7:"chybeta":1:{s:4:"test";s:19:"<?php phpinfo(); ?>";}
 ```
 
 ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170617/4.jpg?raw=true)
 
-#### 其他Magic function的利用
+**其他Magic function的利用**
 
 但如果一次unserialize\(\)中并不会直接调用的魔术函数，比如前面提到的\_\_construct\(\)，是不是就没有利用价值呢？非也。类似于PWN中的ROP，有时候反序列化一个对象时，由它调用的\_\_wakeup\(\)中又去调用了其他的对象，由此可以溯源而上，利用一次次的“gadget”找到漏洞点。
 
@@ -186,7 +188,7 @@ require "shell.php";
 
 ![](https://github.com/CHYbeta/chybeta.github.io/blob/master/images/pic/20170617/5.jpg?raw=true)
 
-## 利用普通成员方法
+### 利用普通成员方法
 
 前面谈到的利用都是基于“自动调用”的magic function。但当漏洞/危险代码存在类的普通方法中，就不能指望通过“自动调用”来达到目的了。这时的利用方法如下，寻找相同的函数名，把敏感函数和类联系在一起。
 
@@ -230,7 +232,7 @@ unserialize($_GET['test']);
 
 下面是利用过程。构造序列化。
 
-```
+```text
 <?php
 class chybeta {
     var $test;
@@ -250,7 +252,7 @@ echo serialize(new chybeta());
 
 得到：
 
-```
+```text
 O:7:"chybeta":1:{s:4:"test";O:7:"ph0en2x":1:{s:5:"test2";s:10:"phpinfo();";}}
 ```
 

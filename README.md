@@ -1,4 +1,4 @@
-# [Awesome CTF Book](https://book.ph0en1x.com/)
+# 关于本书
 
 ## 这是什么
 
@@ -18,13 +18,20 @@
 
 ## 贡献者
 
-* chybeta &emsp;&emsp;
+* chybeta   
+
   [https://chybeta.github.io/](https://chybeta.github.io/)
-* lzhtony &emsp;&emsp; 
-  [https://lxpark.com/](https://lxpark.com/)
-* lxzmads &emsp;&emsp; 
+
+* lzhtony    
+
+  [https://lzhtony.com](https://lxpark.com/)
+
+* lxzmads    
+
   [https://madsome.one/](https://madsome.one/) 
-* findneo &emsp;&emsp; 
+
+* findneo    
+
   [https://github.com/findneo](https://github.com/findneo) 
 
 如有任何错误，请不吝指正。同时也希望能有更多的人加入到我们中间来，参与一起写作。

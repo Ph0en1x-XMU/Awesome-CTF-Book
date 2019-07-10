@@ -1,5 +1,4 @@
-# Zip总结
-
+# zip总结
 
 ## 0x00 伪加密
 
@@ -22,15 +21,15 @@ Windows下常用的爆破工具有：
 
 ## 0x02 明文攻击
 
-明文攻击的条件是你已经知道压缩包中加密文件的一部分文件(大于12bit)，这时就可以进行明文攻击。详细原理不赘述。
+明文攻击的条件是你已经知道压缩包中加密文件的一部分文件\(大于12bit\)，这时就可以进行明文攻击。详细原理不赘述。
 
 在攻击前，拿到了已知文件后可以先用压缩工具对已知文件进行压缩看看CRC32是否和未知加密文件的CRC32一致，若不一致可以考虑换个压缩工具。若一致可进行明文攻击。
 
 攻击也可用AZPR工具进行。
 
-其他工具：[UZPC]([http://www.chat.ru/~m53group](http://www.chat.ru/~m53group)) [PKCrack]([http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html](http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html))
+其他工具：\[UZPC\]\([http://www.chat.ru/~m53group](http://www.chat.ru/~m53group)\) \[PKCrack\]\([http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html](http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html)\)
 
-**注意：当明文的大小比较小时，攻击速度会比较慢；即使有时没有恢复密码，也可以使用明文攻击，最后点保存还是能得到压缩包里内容的(这点很坑。。)。**
+**注意：当明文的大小比较小时，攻击速度会比较慢；即使有时没有恢复密码，也可以使用明文攻击，最后点保存还是能得到压缩包里内容的\(这点很坑。。\)。**
 
 ## 0x03 CRC32碰撞
 
@@ -40,11 +39,11 @@ Windows下常用的爆破工具有：
 
 ```python
 #!/usr/bin/env python
- 
+
 import binascii
- 
+
 dic = r"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&()*+,-./:;<=>?@[\]^_`{|}~ "
- 
+
 for x1 in dic:
     for x2 in dic:
         for x3 in dic:
@@ -106,10 +105,9 @@ F7 46：最后修改文件日期
 00 00：ZIP 文件注释长度
 ```
 
-
-
 参考：
 
-https://bobao.360.cn/ctf/learning/203.html
+[https://bobao.360.cn/ctf/learning/203.html](https://bobao.360.cn/ctf/learning/203.html)
 
-http://www.blogsir.com.cn/safe/252.html
+[http://www.blogsir.com.cn/safe/252.html](http://www.blogsir.com.cn/safe/252.html)
+
